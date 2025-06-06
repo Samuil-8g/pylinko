@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plinko Web Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="ui-panel">
+        <div class="balance-label">Balance: $<span id="balance">{{ balance }}</span></div>
+        <div class="bet-label">Bet: $<input type="number" id="bet" value="10" min="1" /></div>
+        <button id="all-in-btn">All In</button>
+    </div>
+    <div class="play-area">
+        <img src="{{ url_for('static', filename='img/play.png') }}" id="play-btn" alt="Play" />
+        <div id="result"></div>
+        <canvas id="plinko-canvas" width="1000" height="800"></canvas>
+        <audio id="peg-sound" src="{{ url_for('static', filename='audio/peg.wav') }}"></audio>
+        <audio id="slot-sound" src="{{ url_for('static', filename='audio/slot.wav') }}"></audio>
+    </div>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
